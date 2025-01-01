@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Sidebar onAddNote={onAddNote} />
+        <Sidebar onAddNote={onAddNote} notes={notes} />
         <Main />
       </div>
     </>

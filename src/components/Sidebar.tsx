@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 
-const Sidebar = ({ onAddNote }) => {
+const Sidebar = ({ onAddNote, notes }) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -8,14 +8,21 @@ const Sidebar = ({ onAddNote }) => {
         <button onClick={onAddNote}>Add</button>
       </div>
       <div className="app-sidebar-notes">
-        <div className="app-sidebar-note">
-          <div className="sidebar-note-title">
-            <strong>Title</strong>
-            <button>Delete</button>
+        {notes.map((note) => (
+          <div className="app-sidebar-note">
+            <div className="sidebar-note-title">
+              <strong>{note.title}</strong>
+              <button>Delete</button>
+            </div>
+            <p>{note.content}</p>
+            <small>
+              {new Date(note.modDate).toLocaleDateString("ja-JP", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </small>
           </div>
-          <p>Note Detaiil</p>
-          <small>Last Fix Day</small>
-        </div>
+        ))}
       </div>
     </div>
   );
