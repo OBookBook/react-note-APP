@@ -5,9 +5,17 @@ type SidebarProps = {
   onAddNote: () => void;
   notes: Note[];
   onDeleteNote: (id: string) => void;
+  activeNote: string | null;
+  setActiveNote: (id: string) => void;
 };
 
-const Sidebar = ({ onAddNote, notes, onDeleteNote }: SidebarProps) => {
+const Sidebar = ({
+  onAddNote,
+  notes,
+  onDeleteNote,
+  activeNote,
+  setActiveNote,
+}: SidebarProps) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -16,7 +24,11 @@ const Sidebar = ({ onAddNote, notes, onDeleteNote }: SidebarProps) => {
       </div>
       <div className="app-sidebar-notes">
         {notes.map((note) => (
-          <div className="app-sidebar-note" key={note.id}>
+          <div
+            className={`app-sidebar-note ${note.id === activeNote && "active"}`}
+            key={note.id}
+            onClick={() => setActiveNote(note.id)}
+          >
             <div className="sidebar-note-title">
               <strong>{note.title}</strong>
               <button onClick={() => onDeleteNote(note.id)}>Delete</button>

@@ -7,6 +7,7 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
+  const [activeNote, setActiveNote] = useState<string | null>(null);
 
   const onAddNote = () => {
     const newNote = {
@@ -31,6 +32,8 @@ function App() {
           onAddNote={onAddNote}
           notes={notes}
           onDeleteNote={onDeleteNote}
+          activeNote={activeNote}
+          setActiveNote={setActiveNote}
         />
         <Main />
       </div>
