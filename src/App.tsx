@@ -1,9 +1,9 @@
 import "./App.css";
 import uuid from "react-uuid";
 import { useState } from "react";
-import Main from "./components/Main";
 import { Note } from "./types/Note.d";
-import Sidebar from "./components/Sidebar";
+import Main from "./components/Main/Main";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);

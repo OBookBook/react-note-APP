@@ -1,5 +1,5 @@
 import "./Sidebar.css";
-import { Note } from "../types/Note";
+import { Note } from "../../types/Note";
 
 type SidebarProps = {
   onAddNote: () => void;
