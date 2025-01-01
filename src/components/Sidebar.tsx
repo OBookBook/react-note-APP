@@ -1,6 +1,12 @@
 import "./Sidebar.css";
+import { Note } from "../types/Note";
 
-const Sidebar = ({ onAddNote, notes }) => {
+type SidebarProps = {
+  onAddNote: () => void;
+  notes: Note[];
+};
+
+const Sidebar = ({ onAddNote, notes }: SidebarProps) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">

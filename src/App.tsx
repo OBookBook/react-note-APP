@@ -1,14 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import Main from "./components/Main";
+import { Note } from "./types/Note.d";
 import Sidebar from "./components/Sidebar";
-
-type Note = {
-  id: number;
-  title: string;
-  content: string;
-  modDate: number;
-};
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
