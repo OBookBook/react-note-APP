@@ -4,9 +4,10 @@ import { Note } from "../types/Note";
 type SidebarProps = {
   onAddNote: () => void;
   notes: Note[];
+  onDeleteNote: (id: string) => void;
 };
 
-const Sidebar = ({ onAddNote, notes }: SidebarProps) => {
+const Sidebar = ({ onAddNote, notes, onDeleteNote }: SidebarProps) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -18,7 +19,7 @@ const Sidebar = ({ onAddNote, notes }: SidebarProps) => {
           <div className="app-sidebar-note" key={note.id}>
             <div className="sidebar-note-title">
               <strong>{note.title}</strong>
-              <button>Delete</button>
+              <button onClick={() => onDeleteNote(note.id)}>Delete</button>
             </div>
             <p>{note.content}</p>
             <small>
