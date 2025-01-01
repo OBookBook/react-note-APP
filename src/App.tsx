@@ -1,4 +1,5 @@
 import "./App.css";
+import uuid from "react-uuid";
 import { useState } from "react";
 import Main from "./components/Main";
 import { Note } from "./types/Note.d";
@@ -9,7 +10,7 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: 1,
+      id: uuid(),
       title: "note_title",
       content: "note_detail",
       modDate: Date.now(),
