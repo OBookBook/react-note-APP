@@ -72,3 +72,12 @@ textarea {
   color: #555;
   font-family: Arial, sans-serif;
 }
+
+.no-active-note {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
