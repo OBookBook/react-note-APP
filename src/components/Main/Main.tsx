@@ -1,4 +1,5 @@
 import "./Main.css";
+import Markdown from "react-markdown";
 import { Note } from "../../types/Note";
 
 type MainProps = {
@@ -38,7 +39,7 @@ const Main = ({ activeNote, onUpdateNote }: MainProps) => {
       </div>
       <div className="app-main-note-preview">
         <h1 className="preview-title">{activeNote.title}</h1>
-        <div className="markdown-preview">{activeNote.content}</div>
+        <Markdown className="markdown-preview">{activeNote.content}</Markdown>
       </div>
     </div>
   );
